@@ -7,7 +7,8 @@ import org.koin.sampleapp.util.ext.with
 import org.koin.sampleapp.view.AbstractViewModel
 import org.koin.sampleapp.view.SingleLiveEvent
 
-class SearchViewModel(private val weatherRepository: WeatherRepository, private val scheduler: SchedulerProvider) : AbstractViewModel() {
+class SearchViewModel(private val weatherRepository: WeatherRepository,
+                      private val scheduler: SchedulerProvider) : AbstractViewModel() {
 
     val searchEvent = SingleLiveEvent<SearchEvent>()
     val uiData = MutableLiveData<SearchUIModel>()
