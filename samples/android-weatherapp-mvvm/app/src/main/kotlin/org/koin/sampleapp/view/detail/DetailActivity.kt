@@ -1,7 +1,7 @@
 package org.koin.sampleapp.view.detail
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_weather_detail.*
 import org.koin.android.architecture.ext.viewModel
 import org.koin.sampleapp.R
@@ -28,7 +28,8 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_weather_detail)
 
-        detailViewModel.uiData.observe(this, android.arch.lifecycle.Observer { detail ->
+
+        detailViewModel.uiData.observe(this, androidx.lifecycle.Observer { detail ->
             if (detail != null) {
                 displayDetail(detail)
             }

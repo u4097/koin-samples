@@ -1,13 +1,13 @@
 package org.koin.sampleapp.view.result
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_weather_list.*
 import org.koin.android.architecture.ext.viewModel
 import org.koin.sampleapp.R
@@ -31,7 +31,7 @@ class ResultListFragment : Fragment() {
         Log.i(TAG, "myModel : $model")
 
         // Listen Weather list
-        model.uiData.observe(this, android.arch.lifecycle.Observer<ResultUIModel> {
+        model.uiData.observe(this, androidx.lifecycle.Observer<ResultUIModel> {
             if (it != null) {
                 val weatherList = it.list
                 if (weatherList != weatherResultAdapter.list && weatherList.isNotEmpty()) {

@@ -1,8 +1,8 @@
 package org.koin.sampleapp.view.result
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 import org.jetbrains.anko.startActivity
 import org.koin.android.architecture.ext.viewModel
 import org.koin.sampleapp.R
@@ -31,7 +31,7 @@ class ResultActivity : AppCompatActivity() {
         setContentView(R.layout.activity_weather)
 
         // Listen for weather id selected
-        model.selectEvent.observe(this, android.arch.lifecycle.Observer {
+        model.selectEvent.observe(this, androidx.lifecycle.Observer {
             if (it != null) {
                 if (it.idSelected != null) {
                     onWeatherSelected(it.idSelected)
