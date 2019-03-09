@@ -21,5 +21,6 @@ class JavaReader : BaseReader() {
         }!!
     }
 
-    override fun readJsonFile(jsonFile: String): String = File("${basePath()}/$jsonFile").readLines().joinToString(separator = "\n")
+    override fun readJsonFile(jsonFile: String): String =
+            File("${basePath()}/$jsonFile").readLines().joinToString(separator = "\n")
 }
